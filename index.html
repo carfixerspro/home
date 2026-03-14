@@ -163,6 +163,17 @@ nav{background:var(--white);border-bottom:2px solid var(--silver);position:stick
 .foot-bottom{background:#080f17;padding:1.25rem 2rem;text-align:center}
 .foot-bottom p{font-size:0.75rem;color:rgba(255,255,255,0.3)}
 
+/* FACEBOOK BANNER */
+.fb-banner{background:#1877F2;padding:1.5rem 2rem}
+.fb-banner-inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.fb-banner-left{display:flex;align-items:center;gap:1.25rem}
+.fb-icon{width:52px;height:52px;background:rgba(255,255,255,0.15);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fb-text strong{display:block;color:#fff;font-size:1rem;font-weight:600;margin-bottom:2px}
+.fb-text span{font-size:0.85rem;color:rgba(255,255,255,0.8)}
+.fb-follow-btn{background:#fff;color:#1877F2;padding:0.7rem 1.5rem;border-radius:8px;font-weight:700;font-size:0.9rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background 0.2s;white-space:nowrap;flex-shrink:0}
+.fb-follow-btn:hover{background:#e8f0fe}
+@media(max-width:600px){.fb-banner-inner{flex-direction:column;text-align:center}.fb-banner-left{flex-direction:column;text-align:center}.fb-follow-btn{width:100%;justify-content:center}}
+
 /* RESPONSIVE */
 @media(max-width:960px){
   .nav-links{display:none}
@@ -348,6 +359,25 @@ nav{background:var(--white);border-bottom:2px solid var(--silver);position:stick
   <a href="#booking" class="btn-white">Get a Quote Now</a>
 </div>
 
+<!-- FACEBOOK FOLLOW BANNER -->
+<div class="fb-banner">
+  <div class="fb-banner-inner">
+    <div class="fb-banner-left">
+      <div class="fb-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </div>
+      <div class="fb-text">
+        <strong>Follow us on Facebook</strong>
+        <span>Stay up to date with tips, offers and news from Car Fixers Pro</span>
+      </div>
+    </div>
+    <a href="https://www.facebook.com/61561317660734/" target="_blank" class="fb-follow-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      Follow Our Page
+    </a>
+  </div>
+</div>
+
 <section class="tools" id="mobile">
   <div class="inner">
     <div class="tools-text">
@@ -438,14 +468,18 @@ nav{background:var(--white);border-bottom:2px solid var(--silver);position:stick
       <p>Nottingham: 07404 105 251<br>Derby: 07404 105 251</p>
       <p style="margin-top:0.75rem">carfixerspro@gmail.com</p>
       <p style="margin-top:0.75rem">Covering Nottinghamshire<br>&amp; Derbyshire</p>
+      <a href="https://www.facebook.com/61561317660734/" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:1rem;background:#1877F2;color:#fff;padding:0.5rem 1rem;border-radius:6px;font-size:0.82rem;font-weight:600;text-decoration:none;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Follow on Facebook
+      </a>
     </div>
   </div>
 </div>
 <div class="foot-bottom">
-  <p>Car Fixers Pro Ltd is a registered company in England &amp; Wales &nbsp;&middot;&nbsp; Fully Insured Mobile Mechanic Service &nbsp;&middot;&nbsp; &copy; 2025 All rights reserved</p>
+  <p>Car Fixers Pro Ltd is a registered company in England &amp; Wales &nbsp;&middot;&nbsp; Fully Insured Mobile Mechanic Service &nbsp;&middot;&nbsp; &copy; 2025 All rights reserved &nbsp;&middot;&nbsp; <a href="https://www.facebook.com/61561317660734/" target="_blank" style="color:rgba(255,255,255,0.45);text-decoration:none;">Follow us on Facebook</a></p>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function toggleMenu(){
   document.getElementById('mobile-drawer').classList.toggle('open');
   document.getElementById('hamburger').classList.toggle('open');
@@ -552,17 +586,4 @@ function toggleChat(){
   chatOpen=!chatOpen;
   var box=document.getElementById('waChatBox');
   var tip=document.getElementById('waTooltip');
-  if(chatOpen){box.classList.add('open');tip.style.display='none';}
-  else{box.classList.remove('open');}
-}
-function sendWaChat(){
-  var input=document.getElementById('waInput');
-  var msg=input.value.trim();
-  if(!msg)return;
-  var greeting='Hi, I found you on your website. '+msg;
-  window.open('https://wa.me/447404105251?text='+encodeURIComponent(greeting),'_blank');
-  input.value='';
-}
-</script>
-</body>
-</html>
+  if(chatOpen){box.classList.add('open');tip.style.display
