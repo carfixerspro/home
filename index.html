@@ -599,9 +599,9 @@ nav{background:var(--white);border-bottom:2px solid var(--silver);position:stick
     </div>
     <div class="foot-col">
       <h4>Information</h4>
-      <a href="#">About Us</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms &amp; Conditions</a>
+      <a href="#" onclick="openModal('about');return false;">About Us</a>
+      <a href="#" onclick="openModal('privacy');return false;">Privacy Policy</a>
+      <a href="#" onclick="openModal('terms');return false;">Terms &amp; Conditions</a>
       <a href="#booking">Contact Us</a>
       <a href="#booking">Book Online</a>
     </div>
@@ -719,4 +719,161 @@ var chatOpen=false;
 var tooltipShown=false;
 setTimeout(function(){
   if(!chatOpen&&!tooltipShown){
-    document.getElementById('waToo
+    document.getElementById('waTooltip').style.display='block';
+    tooltipShown=true;
+    setTimeout(function(){document.getElementById('waTooltip').style.display='none';},4000);
+  }
+},3000);
+function toggleChat(){
+  chatOpen=!chatOpen;
+  var box=document.getElementById('waChatBox');
+  var tip=document.getElementById('waTooltip');
+  if(chatOpen){box.classList.add('open');tip.style.display='none';}
+  else{box.classList.remove('open');}
+}
+function sendWaChat(){
+  var input=document.getElementById('waInput');
+  var msg=input.value.trim();
+  if(!msg)return;
+  var greeting='Hi, I found you on your website. '+msg;
+  window.open('https://wa.me/447404105251?text='+encodeURIComponent(greeting),'_blank');
+  input.value='';
+}
+</script>
+
+<!-- PAGE MODALS -->
+<style>
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(13,27,42,0.6);z-index:9000;align-items:flex-start;justify-content:center;padding:2rem 1rem;overflow-y:auto}
+.modal-overlay.active{display:flex}
+.modal-box{background:#fff;border-radius:16px;max-width:720px;width:100%;margin:auto;box-shadow:0 24px 80px rgba(13,27,42,0.25);animation:modal-in 0.25s ease}
+@keyframes modal-in{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.modal-head{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 2rem;border-bottom:1px solid #dde3ea}
+.modal-head h3{font-family:'DM Serif Display',serif;font-size:1.5rem;color:#0d1b2a;margin:0}
+.modal-close{background:none;border:none;cursor:pointer;font-size:1.5rem;color:#4a5568;line-height:1;padding:0;transition:color 0.2s}
+.modal-close:hover{color:#c0392b}
+.modal-body{padding:2rem;font-size:0.9rem;color:#4a5568;line-height:1.8;max-height:70vh;overflow-y:auto}
+.modal-body h4{font-family:'DM Serif Display',serif;font-size:1.1rem;color:#0d1b2a;margin:1.5rem 0 0.5rem}
+.modal-body h4:first-child{margin-top:0}
+.modal-body p{margin-bottom:0.9rem}
+.modal-body ul{padding-left:1.25rem;margin-bottom:0.9rem}
+.modal-body ul li{margin-bottom:0.4rem}
+.modal-body a{color:#c0392b}
+</style>
+
+<!-- ABOUT US MODAL -->
+<div class="modal-overlay" id="modal-about" onclick="if(event.target===this)closeModal('about')">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3>About Us</h3>
+      <button class="modal-close" onclick="closeModal('about')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <h4>Who We Are</h4>
+      <p>Car Fixers Pro Ltd is a professional mobile mechanic service based in the East Midlands, proudly serving customers across Nottinghamshire and Derbyshire. We bring the garage to you — at your home, your workplace, or wherever your vehicle needs attention.</p>
+      <h4>Our Story</h4>
+      <p>Founded with a simple idea — that getting your car fixed shouldn't mean losing a full day to a garage — Car Fixers Pro has grown into one of the most trusted mobile mechanic services in the region. With over 10 years of hands-on experience, our team of qualified technicians has helped hundreds of drivers across Nottingham, Derby and beyond get back on the road quickly and affordably.</p>
+      <h4>What We Do</h4>
+      <p>We offer a full range of mobile vehicle repair and servicing options, including:</p>
+      <ul>
+        <li>Car &amp; van servicing and oil changes</li>
+        <li>Diagnostics and fault finding</li>
+        <li>Brake pad, disc and tyre replacement</li>
+        <li>Clutch and gearbox repairs</li>
+        <li>Electrical fault tracing</li>
+        <li>Pre-purchase vehicle inspections</li>
+      </ul>
+      <h4>Our Promise</h4>
+      <p>We believe in honesty, transparency and fair pricing. You'll always receive a fixed quote before any work begins — no hidden charges, no nasty surprises. We treat every vehicle as if it were our own.</p>
+      <h4>Contact Us</h4>
+      <p>Phone: 07404 105 251<br>Email: carfixerspro@gmail.com<br>Coverage: Nottinghamshire &amp; Derbyshire<br>Hours: Monday – Sunday, 7am – 8pm</p>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY POLICY MODAL -->
+<div class="modal-overlay" id="modal-privacy" onclick="if(event.target===this)closeModal('privacy')">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3>Privacy Policy</h3>
+      <button class="modal-close" onclick="closeModal('privacy')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p><strong>Last updated: January 2025</strong></p>
+      <h4>1. Who We Are</h4>
+      <p>Car Fixers Pro Ltd ("we", "us", "our") is a mobile mechanic service registered in England and Wales. We are committed to protecting your personal data and your right to privacy.</p>
+      <h4>2. What Data We Collect</h4>
+      <p>When you contact us via our website, WhatsApp or phone, we may collect:</p>
+      <ul>
+        <li>Your name and contact details (phone number, email address)</li>
+        <li>Vehicle information (make, model, year)</li>
+        <li>Your location or postcode for service delivery</li>
+        <li>Details of the fault or repair requested</li>
+      </ul>
+      <h4>3. How We Use Your Data</h4>
+      <p>We use your personal information solely to:</p>
+      <ul>
+        <li>Respond to your enquiry and provide a quote</li>
+        <li>Schedule and carry out the requested repair or service</li>
+        <li>Contact you regarding your booking or follow-up</li>
+      </ul>
+      <p>We do not sell, share or pass your data to any third parties for marketing purposes.</p>
+      <h4>4. Data Retention</h4>
+      <p>We retain your personal data only for as long as necessary to fulfil the service and comply with legal obligations. You may request deletion of your data at any time by contacting us.</p>
+      <h4>5. Your Rights</h4>
+      <p>Under UK GDPR, you have the right to access, correct, or delete your personal data. To exercise any of these rights, please contact us at carfixerspro@gmail.com or call 07404 105 251.</p>
+      <h4>6. Cookies</h4>
+      <p>This website does not use tracking or advertising cookies. Basic functionality cookies may be used to ensure the website operates correctly.</p>
+      <h4>7. Contact</h4>
+      <p>For any privacy-related queries, contact us at: carfixerspro@gmail.com</p>
+    </div>
+  </div>
+</div>
+
+<!-- TERMS & CONDITIONS MODAL -->
+<div class="modal-overlay" id="modal-terms" onclick="if(event.target===this)closeModal('terms')">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3>Terms &amp; Conditions</h3>
+      <button class="modal-close" onclick="closeModal('terms')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p><strong>Last updated: January 2025</strong></p>
+      <h4>1. About These Terms</h4>
+      <p>These terms and conditions govern your use of our mobile mechanic services provided by Car Fixers Pro Ltd, registered in England and Wales. By booking a service with us, you agree to these terms.</p>
+      <h4>2. Quotations</h4>
+      <p>All quotations are provided in good faith based on the information supplied. If additional faults or complications are discovered during the repair, we will inform you before carrying out any additional work. No additional charges will be made without your prior approval.</p>
+      <h4>3. Bookings</h4>
+      <p>Bookings can be made via WhatsApp, phone or our website contact form. We will confirm your appointment as soon as possible. We reserve the right to reschedule in exceptional circumstances and will notify you as soon as possible.</p>
+      <h4>4. Payment</h4>
+      <p>Payment is due on completion of the work unless otherwise agreed. We accept cash, bank transfer and card payments. We reserve the right to retain any parts removed from a vehicle until payment has been received in full.</p>
+      <h4>5. Parts &amp; Warranty</h4>
+      <p>We use quality parts from reputable suppliers. Parts fitted carry a manufacturer's warranty. Our labour is guaranteed for 3 months from the date of the repair, provided the vehicle has not been tampered with or subjected to misuse.</p>
+      <h4>6. Liability</h4>
+      <p>Car Fixers Pro Ltd is fully insured. Our liability is limited to the cost of the repair undertaken. We are not responsible for pre-existing faults or issues unrelated to the work carried out.</p>
+      <h4>7. Cancellations</h4>
+      <p>We ask for at least 24 hours notice if you need to cancel or rearrange an appointment. Late cancellations or no-shows may incur a charge to cover travel and preparation costs.</p>
+      <h4>8. Governing Law</h4>
+      <p>These terms are governed by the laws of England and Wales. Any disputes will be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+      <h4>9. Contact</h4>
+      <p>For any queries regarding these terms, please contact us at carfixerspro@gmail.com or call 07404 105 251.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal(id){
+  document.getElementById('modal-'+id).classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeModal(id){
+  document.getElementById('modal-'+id).classList.remove('active');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    ['about','privacy','terms'].forEach(function(id){closeModal(id);});
+  }
+});
+</script>
+</body>
+</html>
